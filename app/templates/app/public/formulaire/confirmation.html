@@ -1,0 +1,32 @@
+{% extends 'app/public/formulaire/default.html' %}
+{% block content %}
+{% load static %}
+
+
+<section id="contact" class="contact section-bg">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Confirmation de votre demande envoyée</h2>
+    </div>
+    <p>Vous avez été envoyé un mail de confirmation <br><br>
+    Veuillez verifier vos adresses mail pour plus de détails à propos de votre demande</p>
+  </div>
+  <button type="submit" style="
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 30px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: none;
+      color: #fff;
+      align:center;
+      background: #fd680e;
+      "><a href="{% url 'public_home' %}">Retour sur la page d'accueil</a></button>
+</section><!-- End Contact Us Section -->
+
+{% endblock %} 

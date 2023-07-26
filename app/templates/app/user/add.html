@@ -1,0 +1,116 @@
+{% extends 'app/admin/layouts/default.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!--**********************************
+    Content body start
+***********************************-->
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <div></div>
+            </ol>
+        </div>
+    </div>
+    <!-- row -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header py-3">
+                        <h2 class="m-0 font-weight-bold text-secondary">Nouveau Utilisateur</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- Vertical Form -->
+                        <form action="{% url 'users_store' %}" method="post">
+                            {% csrf_token %}
+                            
+                            <h2 style="text-align: center;">Description</h2>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col-12">
+                                        {{ form|as_crispy_field }}
+                                    </div>
+                                    <div class="col-12">
+                                        {{ form.last_name|as_crispy_field }}
+                                    </div>
+                                    <div class="col-12">
+                                        {{ form.email|as_crispy_field }}
+                                    </div>
+                                    <div class="col-12">
+                                        {{ form.username|as_crispy_field }}
+                                    </div>
+                                    <div class="col-12">
+                                        {{ form.gender|as_crispy_field }}
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col-12">
+                                        {{ form.phone|as_crispy_field }}
+                                    </div>
+                                    <div class="col-12">
+                                        {{ form.password1|as_crispy_field }}
+                                    </div>
+                                    <div class="col-12">
+                                        {{ form.password2|as_crispy_field }}
+                                    </div>
+                                    <div class="col-12">
+                                        {{ form.role|as_crispy_field }}
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <h2 style="text-align: center;">Adrèsse</h2>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="col-12">
+                                        <label>Provinces</label>
+                                            <Select name='province' id="id_province" class='form-control'>
+                                                <option value="">--------</option>
+                                                {% for province in provinces %}
+                                                <option value="{{province.id}}">{{province.nom}}</option>
+                                                {% endfor %}
+                                            </select>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col-12">
+                                        <label>Communes</label>
+                                            <Select name='commune' id="id_commune" class='form-control'>
+                                                <option value="">--------</option>
+                                                {% for commune in communes %}
+                                                <option value="{{commune.id}}">{{commune.nom}}</option>
+                                                {% endfor %}
+                                            </select>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="col-12">
+                                        {{ form.zone|as_crispy_field }}
+                                    </div>   
+                                </div>
+                            </div>
+                            <div class="text-center">
+                            <br/>
+                            <button type="submit" class="btn btn-sm btn-secondary">Enregistrer</button>
+                            <button type="reset" class="btn btn-sm btn-outline-secondary">Réinitialiser</button>
+                            </div>
+                        </form><!-- Vertical Form -->
+            
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #/ container -->
+</div>
+<!--**********************************
+    Content body end
+***********************************-->
+{% endblock %}

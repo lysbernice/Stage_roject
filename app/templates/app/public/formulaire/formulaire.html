@@ -1,0 +1,61 @@
+{% extends 'app/public/formulaire/default.html' %}
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+
+
+<section id="contact" class="contact section-bg">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Formulaire de Demande de Document</h2>
+    </div>
+
+    <div class="row justify-content-center">
+
+      <div class="col-lg-5 col-md-7">
+        
+        <form action="{% url 'rendez_vous_store' %}" method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            {{ form.nom|as_crispy_field }}
+          </div>
+          <div class="form-group">
+            {{ form.prenom|as_crispy_field }}
+          </div>
+          <div class="form-group mt-3">
+            {{ form.email|as_crispy_field }}
+          </div>
+          <div class="form-group mt-3">
+            {{ form.gender|as_crispy_field }}
+          </div>
+          <div class="form-group mt-3">
+            {{ form.code_centre|as_crispy_field }}
+          </div>
+          <div class="form-group mt-3">
+            {{ form.code_participation|as_crispy_field }}
+          </div>
+          <div class="form-group mt-3">
+            {{ form.code_ecole|as_crispy_field }}
+          </div>
+          <div class="form-group mt-3">
+            {{ form.type_documents|as_crispy_field }}
+          </div>
+          <div class="form-group mt-3">
+            {{ form.edition|as_crispy_field }}
+          </div>
+          <div class="my-3">
+            {% comment %} <div class="loading">Loading</div>
+            <div class="error-message"></div> {% endcomment %}
+          </div>
+          <div class="text-center"><button type="submit">Envoyer</button></div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Contact Us Section -->
+
+{% endblock %} 

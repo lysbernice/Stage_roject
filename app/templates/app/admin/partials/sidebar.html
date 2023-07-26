@@ -1,0 +1,46 @@
+
+<div class="nk-sidebar">           
+    <div class="nk-nav-scroll">
+        <ul class="metismenu" id="menu">
+            <li class="nav-label">Adresse</li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="fa fa-location"></i><span class="nav-text">Province</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{% url 'provinces_add' %}">Enregistrer</a></li>
+                    <li><a href="{% url 'provinces_index' %}">Afficher</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="class="fa fa-location"></i><span class="nav-text">Commune</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{% url 'communes_add' %}">Enregistrer</a></li>
+                    <li><a href="{% url 'communes_index' %}">Afficher</a></li>
+                </ul>
+            </li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="class="fa fa-location"></i><span class="nav-text">Zone</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{% url 'zones_add' %}">Enregistrer</a></li>
+                    <li><a href="{% url 'zones_index' %}">Afficher</a></li>
+                </ul>
+            </li>
+            <li class="nav-label">Utilisateurs</li>
+            <li>
+                <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                    <i class="fa fa-user"></i><span class="nav-text">Utilisateur</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="{% url 'utilisateurs_add' %}">Enregistrer</a></li>
+                    <li><a href="{% url 'utilisateurs_index' %}">Afficher</a></li>
+                </ul>
+            </li>
+           
+        </ul>
+    </div>
+</div>

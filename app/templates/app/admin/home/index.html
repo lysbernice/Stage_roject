@@ -1,0 +1,130 @@
+{% extends 'app/admin/layouts/default.html' %}
+{% block content %}
+<div class="content-body">
+
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card gradient-1">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Administrateurs</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">{{ admins }}</h2>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card gradient-2">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Organisateurs</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">{{ organisateurs }}</h2>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card gradient-3">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Agent de saisie</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">{{ agent_de_saisie }}</h2>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card gradient-4">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Receptionistes</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white">{{ receptionistes }}</h2>
+                            <p class="text-white mb-0"></p>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Single Bar Chart -->
+         <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Nombre des Utilisateurs</h4>
+                        <!-- Pie Chart -->
+                <canvas id="pieChart" style="max-height: 400px;"></canvas>
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                    new Chart(document.querySelector('#pieChart'), {
+                        type: 'pie',
+                        data: {
+                        labels: [
+                            'admins',
+                            'agent_de_saisie',
+                            'organisateurs',
+                            'receptionistes'
+                        ],
+                        datasets: [{
+                            label: 'My First Dataset',
+                            data: [{{ admins }}, {{ agent_de_saisie }}, {{ organisateurs }}, {{ receptionistes }}],
+                            backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)',
+                            'rgb(80, 30, 40)'
+                            ],
+                            hoverOffset: 4
+                        }]
+                        }
+                    });
+                    });
+                </script>
+                <!-- End Pie CHart -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Proportion des Genres</h4>
+                            <!-- Doughnut Chart -->
+                            <canvas id="doughnutChart" style="max-height: 400px;"></canvas>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                new Chart(document.querySelector('#doughnutChart'), {
+                                    type: 'doughnut',
+                                    data: {
+                                    labels: [
+                                        'masculins',
+                                        'feminins'
+                                    ],
+                                    datasets: [{
+                                        label: 'My First Dataset',
+                                        data: [{{ masculins }},{{ feminins }}],
+                                        backgroundColor: [
+                                        'rgb(255, 99, 132)',
+                                        'rgb(54, 162, 235)'
+                                        ],
+                                        hoverOffset: 4
+                                    }]
+                                    }
+                                });
+                                });
+                            </script>
+                            <!-- End Doughnut CHart -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- #/ container -->
+</div>
+{% endblock content %}

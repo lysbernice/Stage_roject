@@ -1,0 +1,141 @@
+{% extends 'app/receptioniste/layouts/default.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <div></div>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header py-3">
+                                <h2 class="m-0 font-weight-bold text-primary">Listes de demande à traiter</h2>
+                            </div>
+                            <div class="card-body">
+                                <!-- Vertical Form -->
+                                <form action="{% url 'demande_filter_stab' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-group row">
+                                        <div class="col-lg-6">
+                                            <label>Nom</label>
+                                            <select name='nom' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for nom in noms %}
+                                                <option value="{{ nom }}">{{ nom }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Prenom</label>
+                                            <select name='prenom' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for prenom in prenoms %}
+                                                <option value="{{ prenom }}">{{ prenom }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Email</label>
+                                            <select name='email' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for email in emails %}
+                                                <option value="{{ email }}">{{ email }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Genre</label>
+                                            <select name='genre' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for genre in genres %}
+                                                <option value="{{ genre }}">{{ genre }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Code_centre</label>
+                                            <select name='code_centre' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for code_centre in code_centres %}
+                                                <option value="{{ code_centre }}">{{ code_centre }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div> 
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-lg-6">
+                                            <label>Code_participation</label>
+                                            <select name='Code_participation' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for code_participation in code_participations %}
+                                                <option value="{{ code_participation }}">{{ code_participation }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Code_ecole</label>
+                                            <select name='Code_participation' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for code_ecole in code_ecoles %}
+                                                <option value="{{ code_ecole }}">{{ code_ecole }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Type_documents</label>
+                                            <select name='type_documents' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for type_documents in type_Documents %}
+                                                <option value="{{ type_documents }}">{{ type_documents }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Edition</label>
+                                            <select name='edition' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for edition in editions %}
+                                                <option value="{{ edition }}">{{ edition }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Date_demande</label>
+                                            <select name='date_demande' class='form-control'>
+                                                <option value="">----------</option>
+                                                {% for date_demande in date_demandes %}
+                                                <option value="{{ date_demande }}">{{ date_demande }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>   
+                                    </div>
+                                    <div class="text-center">
+                                        <br/>
+                                        <button type="submit" class="btn btn-primary">Filtrer</button>
+                                        <button type="reset" class="btn btn-outline-primary">Réinitialiser</button>
+                                    </div>
+                                </form><!-- Vertical Form -->
+                  
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+{% endblock %}

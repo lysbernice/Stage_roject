@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ======= Head ======= -->
+{% include "app/public/partials/head.html" %}
+<!-- ======= fin Head ======= -->
+<body>
+
+  <!-- ======= Header ======= -->
+<!-- End #header -->
+{% include "app/public/partials/nav.html" %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <h1>Bienvenu sur notre plateforme du Bureau des Evaluations</h1>
+      <h2>Pour faire une demande de documents vous devez d'abord remplir le formulaire</h2>
+      <a href="{% url 'public_add_formulaire' %}"<button type="submit" style="
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      letter-spacing: 1px;
+      display: inline-block;
+      padding: 8px 30px;
+      border-radius: 50px;
+      transition: 0.5s;
+      margin: 10px;
+      border: none;
+      color: #fff;
+      background: #fd680e;
+      ">Demande de documents</button>
+    </a>
+    </div>
+  </section><!-- #hero -->
+
+  {% block content %}
+  {% endblock content %}
+
+  <!-- ======= Footer ======= -->
+  {% include "app/public/partials/footer.html" %}
+ <!-- End #footer -->
+
+  <!-- Vendor JS Files -->
+  {% load static %}
+  <script src="{% static 'app/public/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'app/public/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'app/public/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

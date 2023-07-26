@@ -1,0 +1,94 @@
+{% extends 'app/receptioniste/layouts/default.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <div></div>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card">
+                              {% comment %} en dessus de notre formulaire il va etre vide {% endcomment %}
+                              <div class="card">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered zero-configuration">
+                                            <thead>
+                                              <tr>
+                                                <th>#</th>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Email</th>
+                                                <th>Genre</th>
+                                                <th>Code centre</th>
+                                                <th>Code participation</th>
+                                                <th>Code ecole</th>
+                                                <th>Type documents</th>
+                                                <th>Edition</th>
+                                                <th>Date demande</th>
+                                                <th>Date delivrance</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              {% for rendez_vous in demandes %}
+                                              <tr>
+                                                <td>{{ forloop.counter }}</td>
+                                                <td>{{ rendez_vous.nom }}</td>
+                                                <td>{{ rendez_vous.prenom }}</td>
+                                                <td>{{ rendez_vous.email }}</td>
+                                                <td>{{ rendez_vous.gender }}</td>
+                                                <td>{{ rendez_vous.code_centre }}</td>
+                                                <td>{{ rendez_vous.code_participation }}</td>
+                                                <td>{{ rendez_vous.code_ecole }}</td>
+                                                <td>{{ rendez_vous.type_documents }}</td>
+                                                <td>{{ rendez_vous.edition }}</td>
+                                                <td>{{ rendez_vous.date_demande }}</td>
+                                                <td>{{ rendez_vous.date_delivrance }}</td>
+                                              </tr>
+                                              {% endfor %}
+                                            </tbody>
+                                            {% comment %} <tfoot class="alert alert-info">
+                                                <tr>
+                                                    <td colspan="11">
+                                                        Nombre des Etudiant Total = {{ totals_etudiants }}<br/>
+                                                        Nombre de féminin Total = {{ totals_feminins }}<br/>
+                                                        Nombre de Masculin Total = {{ totals_masculins }}<br/>
+                                                    </td>
+                                                </tr>
+                                            </tfoot> {% endcomment %}
+                                        </table>
+                                    </div>
+                                    <div class="card-body">
+                                        
+                                        <!-- Vertical Form -->
+                                        <form action="#" method="post">
+                                            <div class="row">
+                                                <div class="col">
+                                                </div>
+                                                <div class="col">
+                                                </div>
+                                            </div>
+                                        </form><!-- Vertical Form -->
+                                    </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "app/public/layouts/default.html" %}
+{% block content %}
+{% load static %}
+<main id="main">
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-6">
+          <img src="{% static 'app/public/assets/img/Exetat.jpg' %}" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0">
+          <h3>Vous pouvez demander votre document sans vous déplacer au Bureau des Évaluations en suivant ces étapes simples :</h3>
+          <p class="fst-italic">
+            <p>1. Remplissez le formulaire de demande de documents disponible en ligne.</p>
+            <p>2. Attendez la réception d'un e-mail de confirmation de la part du Bureau des Évaluations. Cet e-mail confirmera la prise de rendez_vous de votre demande.</p>
+            
+            
+            <p>Grâce à ce processus en ligne, vous pouvez demander vos documents scolaires en toute simplicité et éviter les déplacements inutiles.</p>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- ======= Why Us Section ======= -->
+  <section id="why-us" class="why-us section-bg">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="card">
+            <img src="{% static 'app/public/assets/img/exam.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-icon">
+              <i class="bx bx-book-reader"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Notre Mission</a></h5>
+              <p class="card-text">Organiser, analyser, traiter les résultats des évaluations nationales et proposer aux services concernés des mécanismes de régulation ou d'amélioration qualitative; <br><br> Vérifier le cursus scolaire des lauréats des examens nationaux avant la certification ; piloter des activités d'orientation scolaire de différents ...</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="card">
+            <img src="{% static 'app/public/assets/img/plan.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-icon">
+              <i class="bx bx-calendar-edit"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Le Plan</a></h5>
+              <p class="card-text">1.Vérification du cursus scolaire des lauréats des examens nationaux
+
+                Les procédures utilisées pour la vérification des cursus scolaires
+                Les outils et les techniques utilisés pour la vérification des cursus scolaires.
+                
+                <p class="card-text">2.Pilotage des activités d'orientation scolaire de différents niveaux
+
+                Les différentes activités d'orientation scolaire proposées
+                Les procédures utilisées pour le pilotage des activités d'orientation scolaire </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="card">
+            <img src="{% static 'app/public/assets/img/vision.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-icon">
+              <i class="bx bx-landscape"></i>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><a href="">Notre Vision</a></h5>
+              <p class="card-text">1.Promouvoir l'équité et l'inclusion dans les évaluations nationales en garantissant que tous les élèves ont les mêmes chances de réussir.
+                <p class="card-text"> 2.Etablir des normes de qualité élevées pour les évaluations nationales et s'assurer que les résultats sont fiables et précis.
+                <p class="card-text">3.Travailler en partenariat avec les établissements scolaires, les enseignants et les parents pour améliorer la qualité de l'éducation.
+                <p class="card-text">4.Fournir un soutien et des ressources pour aider les établissements scolaires à utiliser les résultats des évaluations pour améliorer leur enseignement et leur apprentissage. . </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}
